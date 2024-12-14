@@ -1,10 +1,7 @@
 #ifndef DATA_STRUCTURES_H
 #define DATA_STRUCTURES_H
 
-#include "data_structures.h"
 using namespace std;
-
-
 
 class Lista_Sequencial{
 
@@ -320,6 +317,16 @@ class Arvore{
         }
 
         void start(){
+			struct opcoes{
+				int incluir = 1;
+				int excluir = 2;
+				int buscar = 3;
+				int pre_ordem = 4;
+				int em_ordem = 5;
+				int pos_ordem = 6;
+				int encerrar = 0;
+			} op;
+
             int aux = -1;
 			while(aux != op.encerrar){
 				
@@ -331,31 +338,31 @@ class Arvore{
 					int chave;
 					cout << "Digite o valor a ser incluído: ";
 					cin >> chave;
-					arvore1.incluir(arvore1.raiz, chave);
+					this->incluir(this->raiz, chave);
 					cout << endl;
 				}
 				if(aux == op.excluir){
 					int chave;
 					cout << "Digite o valor a ser excluído: ";
 					cin >> chave;
-					arvore1.excluir(arvore1.raiz, chave);
+					this->excluir(this->raiz, chave);
 					cout << "Valor excluído com sucesso!";
 					cout << endl;
 				}
 				if(aux==op.pre_ordem){
 					
 					cout << "Pré-Ordem: " << endl;
-					arvore1.it_pre_ordem(arvore1.raiz);
+					this->it_pre_ordem(this->raiz);
 					cout << endl;
 				}
 				if(aux ==op.em_ordem){
 					cout << "Em Ordem: " << endl;
-					arvore1.em_ordem(arvore1.raiz);
+					this->em_ordem(this->raiz);
 					cout << endl;
 				}
 				if(aux == op.pos_ordem){
 					cout << "Pós Ordem: " << endl;
-					arvore1.pos_ordem(arvore1.raiz);
+					this->pos_ordem(this->raiz);
 					cout << endl;
 				}
 			}
